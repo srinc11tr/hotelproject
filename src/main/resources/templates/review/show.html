@@ -1,0 +1,12 @@
+<div layout:decorate="layout">
+    <div layout:fragment="contents">
+        <h1 th:text="${title}"></h1>
+        <div th:object="${review}">
+            <p>ID：<span th:text="*{id}"></span></p>
+            <p>名前：<span th:text="*{name}"></span></p>
+            <p>評価：<span th:text="*{evaluation}"></span></p>
+            <p>本文：<span th:text="*{body}"></span></p>
+            <a class="btn btn-link" th:href="@{/hotels/{hotel_id}/reviews(hotel_id=*{hotel.id})}">レビュー一覧画面へ</a>
+        </div>
+    </div>
+</div>

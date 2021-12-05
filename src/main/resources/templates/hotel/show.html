@@ -1,0 +1,12 @@
+<div layout:decorate="layout">
+    <div layout:fragment="contents">
+        <h1 th:text="${title}"></h1>
+        <div th:object="${hotel}">
+            <p>ID：<span th:text="*{id}"></span></p>
+            <p>名前：<span th:text="*{name}"></span></p>
+            <p>説明：<span th:text="*{description}"></span></p>
+            <p>写真：<img th:src="*{getPhotoUrl()}" /></p>
+        </div>
+        <a class="btn btn-link" href="/hotels">一覧画面へ</a>
+    </div>
+</div>

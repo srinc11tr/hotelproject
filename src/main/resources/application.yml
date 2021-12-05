@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:h2:./h2db/sampledb;
+    driverClassName: org.h2.Driver
+    username: username
+    password:
+  jpa.hibernate.ddl-auto: update
+  h2.console.enabled: true
+  mvc.hiddenmethod.filter.enabled: true
+
+cloudinary:
+  cloud_name: du7vqtymk
+  api_key: 314236679999646
+  api_secret: 5enlLupAAF5kMroiv_46iOznqsU

@@ -1,0 +1,25 @@
+<div layout:decorate="layout">
+    <div layout:fragment="contents">
+        <div th:if="${#strings.isEmpty(queryName)}">
+            <h1 th:text="${title}"></h1>
+        </div>
+        <div th:unless="${#strings.isEmpty(queryName)}">
+            <h1>「<span th:text="${queryName}"></span>」の検索結果</h1>
+        </div>
+       
+        <div class="row">
+            <div class="col-md-3 my-2" th:each="hotel:${hotels}" th:object="${hotel}">
+                <div class="card">
+                    <img th:src="*{getThumbnailUrl()}" class="card-img-top" alt="ホテルの写真">
+                    <div class="card-body">
+                        <h5 th:text="*{name}" class="card-title"></h5>
+                        <p th:text="*{description}" class="card-text"></p>
+                        <a th:href="@{/hotels/{id}(id=*{id})}" class="btn btn-primary">詳細を見る</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a class="btn btn-secondary" href="/hotels/new">新規作成</a>
+    </div>
+</div>

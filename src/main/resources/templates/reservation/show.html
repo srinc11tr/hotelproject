@@ -1,0 +1,13 @@
+<div layout:decorate="layout">
+    <div layout:fragment="contents">
+        <h1 th:text="${title}"></h1>
+        <div th:object="${reservation}">
+            <p>ID：<span th:text="*{id}"></span></p>
+            <p>名前：<span th:text="*{name}"></span></p>
+            <p>Eメールアドレス：<span th:text="*{email}"></span></p>
+            <p>チェックイン日：<span th:text="*{startDate}"></span></p>
+            <p>チェックアウト日：<span th:text="*{finishDate}"></span></p>
+            <p>人数：<span th:text="*{numberOfPeople}"></span></p>
+        </div>
+    </div>
+</div>

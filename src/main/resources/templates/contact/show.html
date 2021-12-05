@@ -1,0 +1,13 @@
+<div layout:decorate="layout">
+    <div layout:fragment="contents">
+        <h1 th:text="${title}"></h1>
+        <div th:object="${contact}">
+            <p>ID：<span th:text="*{id}"></span></p>
+            <p>名前：<span th:text="*{name}"></span></p>
+            <p>内容：<span th:text="*{content}"></span></p>
+            <p>メールアドレス：<span th:text="*{email}"></span></p>
+        </div>
+        <a class="btn btn-secondary" th:href="@{/contacts/{id}/edit(id=*{id})}">編集</a>
+        <a class="btn btn-link" href="/contacts">一覧画面へ</a>
+    </div>
+</div>
